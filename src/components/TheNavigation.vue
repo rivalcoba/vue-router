@@ -7,3 +7,9 @@
   <router-link to="/jamaica">Jamaica</router-link>
 </div>
 </template>
+<style lang="css">
+#nav .navigation-active-link{
+  color: red;
+  border-bottom: 2px solid red;
+}
+</style>
