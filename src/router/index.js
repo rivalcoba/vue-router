@@ -28,6 +28,10 @@ const routes = [
     name: "Jamaica",
     component: () => import("@/views/Jamaica.vue"),
   },
+  {
+    path: "/Destination/:id",
+    component: () => import("@/views/DestinationShow.vue")
+  }
 ];
 
 // 2. Creando el vue router
@@ -35,8 +39,6 @@ const router = createRouter({
   // 2.1 Configurando el modo historia
   history: createWebHistory(),
   // 2.3 Configurando las rutas
-  routes,
-  // 2.4 Configurando clase del enlace activo
-  linkActiveClass: 'navigation-active-link'
+  routes
 });
 export default router;
