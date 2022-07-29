@@ -27,7 +27,6 @@ export default {
   },
   async created() {
     this.initData();
-    this.$watch(()=>this.$route.params, this.initData);
   }
 }
 </script>
