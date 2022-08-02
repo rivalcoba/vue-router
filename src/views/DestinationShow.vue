@@ -19,13 +19,13 @@ import sourceData from '@/data.json'
 export default {
   props: {
     id: {
-      type: String,
+      type: Number,
       required: true
     }
   },
   computed: {
     destination() {
-      return sourceData.destinations.find(destination => { return destination.id == this.id })
+      return sourceData.destinations.find(destination => { return destination.id === this.id })
     }
   }
 }
