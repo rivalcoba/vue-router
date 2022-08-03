@@ -2,35 +2,48 @@
   <section class="destination">
     <h1>{{ destination.name }}</h1>
     <div class="destination-details">
-      <img 
-      :src="`/images/${destination.image}`" 
-      :alt="destination.name">
+      <img :src="`/images/${destination.image}`" :alt="destination.name" />
       <p>
         {{ destination.description }}
       </p>
+    </div>
+  </section>
+  <section class="experiences">
+    <h2>Mejores Experiencias en {{ destination.name }}</h2>
+    <div class="cards">
+      <experience-card 
+      v-for="experience in destination.experiences"
+      :key="experience.slug"
+      :experience="experience"
+      />
     </div>
   </section>
 </template>
 
 <script>
 // Importando datos
-import sourceData from '@/data.json'
+import sourceData from "@/data.json";
+// Importando componente
+import ExperienceCard from "@/components/ExperienceCard.vue";
 
 export default {
+  components: {
+    ExperienceCard,
+  },
   props: {
     id: {
       type: Number,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     destination() {
-      return sourceData.destinations.find(destination => { return destination.id === this.id })
-    }
-  }
-}
+      return sourceData.destinations.find((destination) => {
+        return destination.id === this.id;
+      });
+    },
+  },
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
