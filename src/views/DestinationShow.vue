@@ -40,6 +40,9 @@ export default {
       type: Number,
       required: true,
     },
+    slug: {
+      type: String
+    }
   },
   computed: {
     destination() {
