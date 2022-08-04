@@ -13,13 +13,15 @@ const routes = [
     name: "destination.show",
     component: () => import("@/views/DestinationShow.vue"),
     props: route => ({...route.params, id: parseInt(route.params.id)}),
+    children: [
+      {
+        path: "/Destination/:id/:slug/:experienceSlug",
+        name: "experience.show",
+        component: () => import("@/views/ExperienceShow.vue"),
+        props: route => ({...route.params, id: parseInt(route.params.id)})
+      }
+    ]
   },
-  {
-    path: "/Destination/:id/:slug/:experienceSlug",
-    name: "experience.show",
-    component: () => import("@/views/ExperienceShow.vue"),
-    props: route => ({...route.params, id: parseInt(route.params.id)})
-  }
 ];
 
 // 2. Creando el vue router
