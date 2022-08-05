@@ -43,7 +43,8 @@ export default {
     },
     slug: {
       type: String
-    }
+    },
+    experienceSlug: { type: String }
   },
   computed: {
     destination() {
