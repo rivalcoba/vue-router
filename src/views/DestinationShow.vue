@@ -1,4 +1,5 @@
 <template>
+<div>
   <section class="destination">
     <h1>{{ destination.name }}</h1>
     <go-back></go-back>
@@ -25,6 +26,7 @@
     </div>
     <router-view></router-view>
   </section>
+</div>
 </template>
 
 <script>
