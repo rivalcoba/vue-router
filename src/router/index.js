@@ -9,6 +9,14 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+  },{
+    // definiendo una ruta protegida
+    path: "/protected",
+    name: "protected",
+    component: () => import('@/views/Protected.vue'),
+    meta: {
+      requiresAuth : true
+    }
   },
   {
     path: "/Destination/:id/:slug",
